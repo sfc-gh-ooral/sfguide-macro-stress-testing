@@ -1,13 +1,13 @@
-# Design: Halvorn Stress Desk
+# Design: Macro Stress Testing
 
-This pack's app and landing page share one fictional brand. Nothing here is a real firm.
+This pack's app and landing page share one look. The product is called Macro Stress Testing; the firm whose book is shown is fictional.
 
 ## Brand
 
-- **Product:** Halvorn Stress Desk, a stress-testing workspace for a payments processor's risk and FP&A (financial planning and analysis) team.
+- **Product:** Macro Stress Testing, a stress-testing workspace for a payments processor's risk and FP&A (financial planning and analysis) team.
 - **Fictional firm whose book is shown:** Quillmar Payments, a card, debit, prepaid and BNPL (buy now, pay later) processor.
-- **Name check:** "Halvorn" and "Quillmar" are coined stems. Exact-phrase web searches returned no firm, product or trademark with either name (November 2026).
-- **Voice:** calm, exact, committee-ready. Short sentences, numbers with units, no hype. The desk "shows", "moves" and "flags"; it never "predicts" or "guarantees". Every AI paragraph says where its numbers come from.
+- **Name check:** "Quillmar" is a coined stem. Exact-phrase web searches returned no firm, product or trademark with that name (November 2026).
+- **Voice:** calm, exact, committee-ready. Short sentences, numbers with units, no hype. The app "shows", "moves" and "flags"; it never "predicts" or "guarantees". Every AI paragraph says where its numbers come from.
 
 ### Logo mark (inline SVG)
 
@@ -23,7 +23,7 @@ A keel under load: a square plate with a copper stress line that bends down thro
 </svg>
 ```
 
-Wordmark: "HALVORN" in condensed caps with wide tracking, then "Stress Desk" in regular weight.
+Wordmark: "MACRO STRESS" in condensed caps with wide tracking, then "Testing" in regular weight.
 
 ## Design direction: an instrument panel on sand paper
 

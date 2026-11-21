@@ -1,4 +1,4 @@
-"""Halvorn Stress Desk: Macro Stress Testing (Streamlit).
+"""Macro Stress Testing (Streamlit).
 
 Runs in Streamlit in Snowflake (Live mode on the active session) or locally:
   Sample mode: bundled synthetic data in data/, captured AI results in data/sample/. No account needed.
@@ -17,7 +17,7 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import stress_core as core  # noqa: E402
 
-st.set_page_config(page_title="Halvorn Stress Desk · Macro Stress Testing", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Macro Stress Testing", layout="wide", initial_sidebar_state="collapsed")
 
 TOK = dict(bg="#F4EFE6", surface="#FFFDF8", surface2="#EFE7D9", ink="#1F2328", muted="#5B5F66", line="#DDD2BF",
            oxide="#A0421C", steel="#24545C", ok="#2F6B3A", watch="#835500", breach="#A8201A", band="#E9DFCC")
@@ -88,7 +88,7 @@ bar_l, bar_r = st.columns([5, 2])
 with bar_r:
     mode = st.radio("Data mode", ["Sample", "Live"], horizontal=True, key="mode", label_visibility="collapsed")
 with bar_l:
-    st.markdown(f'<div class="hv-bar">{LOGO}<b>HALVORN</b><span class="sub">Stress Desk · Quillmar Payments</span>'
+    st.markdown(f'<div class="hv-bar">{LOGO}<b>MACRO STRESS</b><span class="sub">Testing · Quillmar Payments</span>'
                 f'<span class="hv-env {"live" if mode == "Live" else "sample"}">{"LIVE · SNOWFLAKE" if mode == "Live" else "SAMPLE · SYNTHETIC"}</span>'
                 f'<span class="hv-user">R. Okafor <small>Portfolio risk</small></span></div>', unsafe_allow_html=True)
 
@@ -417,6 +417,6 @@ with main:
                 with st.expander("SQL the agent ran"):
                     st.code(s_, language="sql")
 
-st.markdown(f"<p style='color:{TOK['muted']};font-size:12px;margin-top:24px'>Halvorn and Quillmar Payments are fictional. Synthetic data and "
+st.markdown(f"<p style='color:{TOK['muted']};font-size:12px;margin-top:24px'>Quillmar Payments is fictional. Synthetic data and "
             "illustrative logic; not production, regulatory or financial advice. An example, not an official Snowflake product. "
             "Owner: Javier Soliz.</p>", unsafe_allow_html=True)

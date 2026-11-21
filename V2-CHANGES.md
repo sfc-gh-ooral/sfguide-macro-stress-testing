@@ -6,7 +6,7 @@ This branch rebuilds the app, the landing page and the polish to the Snow Packs 
 
 ### App shell (new)
 - **Before:** a Streamlit page with a title, a sidebar button and a gallery of notes; the hosted Try page was a separate single-page mock.
-- **After:** both run as **Halvorn Stress Desk**, a fictional brand for the fictional processor Quillmar Payments (design brief in `docs/DESIGN.md`). A graphite command bar with a logo, five tabs, a Sample/Live switch, an environment badge and a role chip; a scenario rail on the right that stays on every screen (a bottom sheet on phones).
+- **After:** both run as **Macro Stress Testing**, showing the book of the fictional processor Quillmar Payments (design brief in `docs/DESIGN.md`). A graphite command bar with a logo, five tabs, a Sample/Live switch, an environment badge and a role chip; a scenario rail on the right that stays on every screen (a bottom sheet on phones).
 - **Why:** v2 asks for a branded, enterprise-looking shell and a mode switch that always shows which mode is on.
 
 ### Pulse (new)
@@ -28,7 +28,7 @@ This branch rebuilds the app, the landing page and the polish to the Snow Packs 
 - The Cortex Agent your setup already created is now called from the app (`SNOWFLAKE.CORTEX.DATA_AGENT_RUN`), with suggested questions, staged steps, a streaming answer and the SQL it ran. Before, the agent could only be explored in Snowsight.
 
 ### Landing page (rebuilt)
-- Moved to `docs/index.html` with its own Halvorn identity: a problem-first headline, an inline SVG stress fan drawn from the pack's betas, an at-a-glance strip (setup time, cost, edition), six captioned screenshots with matching alt text, a how-it-works ladder naming each Snowflake capability, the planted stories, run options, the disclaimer and docs links. Light and dark mode; works at 390 px. No CDN scripts.
+- Moved to `docs/index.html` with its own identity: a problem-first headline, an inline SVG stress fan drawn from the pack's betas, an at-a-glance strip (setup time, cost, edition), six captioned screenshots with matching alt text, a how-it-works ladder naming each Snowflake capability, the planted stories, run options, the disclaimer and docs links. Light and dark mode; works at 390 px. No CDN scripts.
 
 ## Data and SQL
 
@@ -60,4 +60,4 @@ Setup, the scenario function, both AI paths and teardown ran in a test account w
    python3 scripts/capture_screenshots.py   # docs/images/ and docs/images/cards/
    ```
 
-6. **Catalog card:** `docs/images/cards/macro-stress-testing-1.jpg` to `-5.jpg` (960×600, under 100 KB) are ready for the Snow Packs catalog; the maintainers will update your entry there.
+6. **Catalog card:** `docs/images/cards/macro-stress-testing-1.jpg` to `-5.jpg` (960×600, under 100 KB) are ready for the Snow Packs catalog; ready for the catalog entry.

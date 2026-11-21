@@ -2,7 +2,7 @@
 
 **When rates climb and jobs soften, which part of your payments book breaks first?** This example stress-tests the book of a fictional processor, Quillmar Payments, against the macro cycle. Shock Fed funds and unemployment, see approval, 30-day delinquency and charge-off move per credit tier and product against risk appetite, and hand the risk committee a stress note in which every number cites a fact and a second AI pass checks it.
 
-The app is **Halvorn Stress Desk**, a fictional product brand (see [docs/DESIGN.md](docs/DESIGN.md)).
+The app is **Macro Stress Testing** (design notes in [docs/DESIGN.md](docs/DESIGN.md)).
 
 - Guide: https://sfc-gh-jsoliz.github.io/sfguide-macro-stress-testing/
 - Hosted example, no account needed: https://sfc-gh-jsoliz.github.io/sfguide-macro-stress-testing/try/
