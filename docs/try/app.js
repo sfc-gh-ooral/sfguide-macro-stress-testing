@@ -1,4 +1,4 @@
-/* Halvorn Stress Desk: hosted example (Sample mode only). No external scripts. */
+/* Macro Stress Testing: hosted example (Sample mode only). No external scripts. */
 (() => {
   "use strict";
   const $ = (s, el = document) => el.querySelector(s);
@@ -311,6 +311,7 @@
   }
   function showNote(n, animate) {
     S.current = n; renderHistory();
+    $("#note-inject").checked = !!n.injected; $("#note-tier").value = n.tier;
     const v = n.verdict, ok = v.status === "verified";
     $("#facts").innerHTML = n.facts.map((f) => `<li class="fact" data-fact="${f.id}"><b>${f.id}</b><div><span>${esc(f.label)}</span><em>${esc(f.value)}</em><span>${esc(f.source)}</span></div></li>`).join("");
     const body = $("#note-body");
@@ -320,6 +321,16 @@
     if (!animate) { body.innerHTML = head + `<div class="note">${md(n.draft)}</div>` + verdict; return; }
     body.innerHTML = head + `<div class="note" id="note-text"></div><div id="note-verdict"></div>`;
     return stream($("#note-text"), n.draft).then(() => { $("#note-verdict").innerHTML = verdict; });
+  }
+  // Keep the shown note in step with the tier and injection controls.
+  function syncNote() {
+    const tier = $("#note-tier").value, inj = $("#note-inject").checked;
+    $("#note-gate").innerHTML = "";
+    const seen = S.notes.find((x) => x.tier === tier && x.injected === inj && x.preset === (presetFor(S.fed, S.un) || {}).name);
+    const n = seen || findNote(tier, inj);
+    if (n) { if (!seen) S.notes.unshift({ ...n }); showNote(seen || S.notes[0], false); return; }
+    $("#note-body").innerHTML = `<div class="callout">No captured note matches these settings yet. Select Generate note.</div>`;
+    S.current = null; renderHistory();
   }
   const MODEL = () => "claude-sonnet-4-5";
   async function generateNote() {
@@ -425,6 +436,8 @@
     $("#scrim").addEventListener("click", closeDrawer);
     [["#f-tier", "tier"], ["#f-product", "product"], ["#f-status", "status"], ["#f-q", "q"]].forEach(([s, k]) => $(s).addEventListener("input", (e) => { S.filter[k] = e.target.value; renderPools(); }));
     $("#note-run").addEventListener("click", generateNote);
+    $("#note-inject").addEventListener("change", syncNote);
+    $("#note-tier").addEventListener("change", syncNote);
     document.addEventListener("mouseover", (e) => {
       const c = e.target.closest(".cite"); $$(".fact.hot,.cite.hot").forEach((x) => x.classList.remove("hot"));
       if (c) { const f = $(`[data-fact="${c.dataset.f}"]`); if (f) { f.classList.add("hot"); f.scrollIntoView({ block: "nearest" }); } c.classList.add("hot"); }
@@ -434,7 +447,7 @@
     $("#live-close").addEventListener("click", () => $("#live-modal").classList.remove("on"));
     $("#theme").addEventListener("click", () => {
       const r = document.documentElement, dark = r.dataset.theme !== "dark";
-      r.dataset.theme = dark ? "dark" : "light"; try { localStorage.setItem("halvorn-theme", r.dataset.theme); } catch (_) {}
+      r.dataset.theme = dark ? "dark" : "light"; try { localStorage.setItem("mst-theme", r.dataset.theme); } catch (_) {}
       $("#vol-chart").dataset.done = ""; refresh();
     });
   }
@@ -462,6 +475,6 @@
     if (S.notes[0]) showNote(S.notes[0], false);
     const h = location.hash.slice(1); if (["pulse", "lab", "pools", "notes", "ask"].includes(h)) go(h);
   }
-  try { const t = localStorage.getItem("halvorn-theme"); if (t) document.documentElement.dataset.theme = t; else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark"; } catch (_) {}
+  try { const t = localStorage.getItem("mst-theme"); if (t) document.documentElement.dataset.theme = t; else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark"; } catch (_) {}
   boot();
 })();
